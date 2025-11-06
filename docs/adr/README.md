@@ -18,6 +18,7 @@ These ADRs establish the architectural vision and core philosophy that guides al
 |-----|--------|----------|
 | [**001 – Layered Kubernetes Bootstrapping Model**](001-layered-platform.md) | Defines the 4-layer model (Infrastructure, Bootstrap, Core Platform, Applications) and establishes **k8s-boot** as the canonical Layer 1 baseline. |
 | [**002 – Bootstrap Philosophy and Scope**](002-bootstrap-philosophy-and-scope.md) | Clarifies what k8s-boot includes (Flux Source + Kustomize + Notification + ESO) and excludes (Helm, Image Automation, Ingress, Metrics). Goal: *a small, deterministic foundation that can manage itself.* |
+| [**013 – User Interface and Interaction Philosophy**](013-user-interface-and-interaction-philosophy.md) | k8s-boot is UI-agnostic and headless. No built-in dashboards or web UIs. Users choose their preferred tools (k9s, Headlamp, kubectl, etc.) for a composable, automation-friendly experience. |
 
 ## Governance: Lifecycle and Security Policies
 

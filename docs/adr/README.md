@@ -47,6 +47,7 @@ These ADRs establish concrete implementation standards that ensure consistency a
 |-----|--------|----------|
 | [**009 – Prohibit Secrets in Git Repositories**](009-prohibit-secrets-in-git-repositories.md) | Forbids encrypted or sealed secrets in source control. All secrets come from external stores through ESO; only ESO bootstrap credentials exist locally. |
 | [**010 – Always Use Server-Side Apply (SSA)**](010-always-use-server-side-apply.md) | Mandates `kubectl apply --server-side --force-conflicts --field-manager=k8s-boot` for idempotent, CRD-aware reconciliation. |
+| [**011 – Namespace and Naming Conventions**](011-namespace-and-naming-conventions.md) | Adopts upstream default namespaces (e.g., `flux-system`, `external-secrets`) without customization. Clusters are cattle, not pets — single baseline per cluster. |
 
 ## Extension: Beyond Layer 1
 
@@ -54,4 +55,4 @@ This ADR extends the same principles and patterns to Layer 2 (Core Platform).
 
 | No. | Title | Summary |
 |-----|--------|----------|
-| [**011 – Core Platform as Pre-Rendered BOM**](011-core-platform-bom.md) | Defines Layer 2 (`k8s-core`) as a pre-rendered Bill of Materials composed of vendored upstream YAML and rendered Helm templates. |
+| [**012 – Core Platform as Pre-Rendered BOM**](012-core-platform-bom.md) | Defines Layer 2 (`k8s-core`) as a pre-rendered Bill of Materials composed of vendored upstream YAML and rendered Helm templates. |

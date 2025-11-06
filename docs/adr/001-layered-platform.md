@@ -72,7 +72,7 @@ Each layer builds on the previous one but remains logically independent and vers
 ## Implementation Notes
 
 - `k8s-boot` releases are pure static YAML, built via `vendir` + `kustomize`.  
-- FluxCD’s Helm Controller is explicitly excluded (see [ADR 0002](./0002-disable-flux-helm-controller.md)).  
+- FluxCD's Helm Controller is explicitly excluded (see [ADR-006](./006-disable-flux-helm-controller.md)).  
 - Upgrades occur by applying a new bootstrap manifest (e.g., `bootstrap-1.1.x.yaml`).  
 - FluxCD monitors Layer 1 for drift but does not reinstall it.  
 - Downstream projects (`k8s-core`, platform repos) define their own Kustomizations targeting Layer 2 +.  

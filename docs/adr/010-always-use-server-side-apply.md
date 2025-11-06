@@ -88,7 +88,7 @@ kubectl apply \
 
 - [Kubernetes Server-Side Apply Design Doc](https://kubernetes.io/docs/reference/using-api/server-side-apply/)  
 - [kubectl apply CLI Reference](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply)  
-- [ADR-002 Drift Guard Strategy](./0002-drift-guard-strategy.md)
+- [ADR-007 Drift Guard Strategy](./007-drift-guard-strategy-for-layer-1.md)
 
 # **Decision Summary:**  
 All bootstrap and upgrade workflows in `k8s-boot` and `k8s-core` use **Server-Side Apply** as the canonical mechanism for applying resources.  

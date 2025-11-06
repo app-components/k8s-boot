@@ -109,8 +109,8 @@ Git should only hold:
 - [External Secrets Operator Docs](https://external-secrets.io/)  
 - [1Password Service Account Integration](https://developer.1password.com/docs/cli/kubernetes/)  
 - [FluxCD Integration Guide](https://external-secrets.io/guides/getting-started-flux/)  
-- [ADR-001 Layered Platform Model](./001-layered-platform.md)  
-- [ADR-002 Choose FluxCD as GitOps Engine](./002-choose-fluxcd-as-gitops-engine.md)
+- [ADR-001 Layered Platform Model](./001-layered-platform.md)
+- [ADR-005 Choose FluxCD as GitOps Engine](./005-choose-fluxcd-as-gitops-engine.md)
 
 **Decision Summary:**  
 Adopt **External Secrets Operator** as a mandatory part of Layer 1 (`k8s-boot`).  

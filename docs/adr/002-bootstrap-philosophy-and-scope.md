@@ -35,7 +35,7 @@ They form the minimal control plane required for higher-level layers to function
 ### Explicit Exclusions
 | Excluded Area | Rationale |
 |----------------|------------|
-| **Helm Controller** | Introduces runtime templating and dependency ordering (see ADR-003). |
+| **Helm Controller** | Introduces runtime templating and dependency ordering (see ADR-006). |
 | **Image Automation Controllers** | Mutable state; violates declarative immutability of Layer 1. |
 | **Ingress, DNS, Cert-Management, Metrics** | Belong to Layer 2 (k8s-core) where platform policy is defined. |
 | **UI or Dashboard Components** | Not required; automation and AI agents interact via CLI / API. |
@@ -83,10 +83,10 @@ They form the minimal control plane required for higher-level layers to function
 | **Custom Operator** | Write a bespoke bootstrap controller. | Rejected – unnecessary; Flux + SSA already provide desired behavior. |
 
 ## References
-- [ADR-001 Layered Platform Model](./001-layered-platform.md)  
-- [ADR-003 Disable Flux Helm Controller](./003-disable-flux-helm-controller.md)  
-- [ADR-005 Choose External Secrets Operator](./005-choose-external-secrets-operator.md)  
-- [ADR-007 Always Use Server-Side Apply](./007-alway-use-server-side-apply.md)  
+- [ADR-001 Layered Platform Model](./001-layered-platform.md)
+- [ADR-006 Disable Flux Helm Controller](./006-disable-flux-helm-controller.md)
+- [ADR-008 Choose External Secrets Operator](./008-choose-external-secrets-operator.md)
+- [ADR-010 Always Use Server-Side Apply](./010-always-use-server-side-apply.md)  
 - [Flux Documentation](https://fluxcd.io/docs/)  
 - [External Secrets Operator](https://external-secrets.io/)  
 

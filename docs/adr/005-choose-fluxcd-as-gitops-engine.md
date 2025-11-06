@@ -32,7 +32,7 @@ Only a **minimal subset** of controllers will be installed at bootstrap:
 | `source-controller` | ✅ | Fetches and caches manifests from Git or OCI sources |
 | `kustomize-controller` | ✅ | Reconciles manifests declaratively via Kustomize |
 | `notification-controller` | ✅ | Emits events and alerts between controllers |
-| `helm-controller` | ❌ | Excluded – see [ADR-005](./005-disable-flux-helm-controller.md) |
+| `helm-controller` | ❌ | Excluded – see [ADR-006](./006-disable-flux-helm-controller.md) |
 | `image-reflector-controller` | ❌ | Excluded – mutable automation |
 | `image-automation-controller` | ❌ | Excluded – auto-committing image updates |
 
@@ -94,9 +94,9 @@ Flux in `k8s-boot` therefore performs only **declarative source + apply** operat
 - [Carvel kapp-controller](https://carvel.dev/kapp-controller/)  
 - [Argo CD Documentation](https://argo-cd.readthedocs.io/)  
 - [GitOps Toolkit Architecture](https://fluxcd.io/flux/concepts/)  
-- [ADR-001 Layered Platform Model](./001-layered-platform.md)  
-- [ADR-005 Disable Flux Helm Controller](./005-disable-flux-helm-controller.md)  
-- [ADR-007 Always Use Server-Side Apply](./007-always-use-server-side-apply.md)  
+- [ADR-001 Layered Platform Model](./001-layered-platform.md)
+- [ADR-006 Disable Flux Helm Controller](./006-disable-flux-helm-controller.md)
+- [ADR-010 Always Use Server-Side Apply](./010-always-use-server-side-apply.md)  
 
 **Decision Summary:**  
 Adopt **FluxCD** as the GitOps engine across all layers, limited in `k8s-boot` to `source-controller`, `kustomize-controller`, and `notification-controller`.  

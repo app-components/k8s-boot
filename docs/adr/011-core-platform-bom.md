@@ -15,7 +15,7 @@ After a cluster is bootstrapped with **k8s-boot** (Layer 1), the next logical st
 
 These components define the **Core Platform** used by all environments and applications.
 
-Many of these upstream projects distribute only **Helm charts**. However, ADR 0002 disables the FluxCD Helm Controller and forbids runtime chart reconciliation.  
+Many of these upstream projects distribute only **Helm charts**. However, ADR-006 disables the FluxCD Helm Controller and forbids runtime chart reconciliation.  
 Therefore, we must define a repeatable way to consume Helm-based upstreams **as static, version-pinned manifests**, producing a Bill of Materials (BOM) that Flux can reconcile deterministically.
 
 ## Decision
@@ -90,7 +90,7 @@ Flux then reconciles the core stack automatically.
 
 | Option | Description | Outcome |
 |--------|--------------|----------|
-| **A. Use Helm Controller** | Re-enable Helm Controller for Layer 2 only. | Rejected – violates ADR 0002; adds runtime templating complexity. |
+| **A. Use Helm Controller** | Re-enable Helm Controller for Layer 2 only. | Rejected – violates ADR-006; adds runtime templating complexity. |
 | **B. Manual chart templating per cluster** | Operators run `helm template` locally. | Rejected – non-reproducible, error-prone. |
 | **C. Pre-rendered BOM (chosen)** | Build-time rendering + GitOps delivery. | Accepted – deterministic and scalable. |
 
@@ -114,9 +114,9 @@ Flux then reconciles the core stack automatically.
 
 ## Relationship to Other ADRs
 
-- **ADR 0001:** Defines the 4-layer model.  
-- **ADR 0002:** Disables FluxCD Helm Controller.  
-- **ADR 0003 (this):** Specifies the Layer 2 pattern for static, pre-rendered platform BOMs.
+- **ADR-001:** Defines the 4-layer model.
+- **ADR-006:** Disables FluxCD Helm Controller.
+- **ADR-011 (this):** Specifies the Layer 2 pattern for static, pre-rendered platform BOMs.
 
 ## References
 

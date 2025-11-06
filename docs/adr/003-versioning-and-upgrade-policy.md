@@ -77,7 +77,7 @@ Operators are expected to re-apply the tracking file (`bootstrap-1.0.x.yaml`, `p
 > Automation of patch upgrades is a **security control**, not an operational optimization.  
 > Clusters that fail to apply the latest patch are considered non-compliant with baseline security policy.
 
-For complete policy details, see [ADR-004 – Security and Auto-Patching Policy](./004-security-and-auto-patching.md).
+For complete policy details, see [ADR-004 – Security and Auto-Patching Policy](./004-security-and-auto-patching-policy.md).
 
 ## Implementation Notes
 

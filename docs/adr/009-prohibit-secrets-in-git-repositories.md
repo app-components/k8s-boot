@@ -28,7 +28,7 @@ Historically, teams have tried to preserve such keys by checking them into repos
 
 All of these approaches embed sensitive material—whether plaintext or ciphertext—into source control, creating rotation overhead, exposure risk, and unnecessary complexity.  
 
-Since **External Secrets Operator (ESO)** (see ADR-003) provides a way to pull credentials directly from vaults, secrets no longer need to live in Git at all.
+Since **External Secrets Operator (ESO)** (see ADR-008) provides a way to pull credentials directly from vaults, secrets no longer need to live in Git at all.
 
 ## Decision
 
@@ -53,7 +53,7 @@ That Secret must be created manually via `kubectl create secret` and must never 
 | **Tooling Complexity** | GPG, SOPS, or Sealed Secrets per environment | None — vaults + ESO only |
 | **Automation** | Manual encrypt/decrypt steps | Declarative sync via ESO |
 
-This mirrors **ADR-002 (Disable Flux Helm Controller)**: both remove mutation of sensitive state and keep clusters reproducible, declarative, and air-gap-friendly.
+This mirrors **ADR-006 (Disable Flux Helm Controller)**: both remove mutation of sensitive state and keep clusters reproducible, declarative, and air-gap-friendly.
 
 ## Consequences
 
@@ -81,9 +81,9 @@ This mirrors **ADR-002 (Disable Flux Helm Controller)**: both remove mutation of
 
 ## 7 References
 
-- [ADR-001 Layered Platform Model](./001-layered-platform.md)  
-- [ADR-002 Choose FluxCD as GitOps Engine](./002-choose-fluxcd-as-gitops-engine.md)  
-- [ADR-003 Choose External Secrets Operator](./003-choose-external-secrets-operator.md)  
+- [ADR-001 Layered Platform Model](./001-layered-platform.md)
+- [ADR-005 Choose FluxCD as GitOps Engine](./005-choose-fluxcd-as-gitops-engine.md)
+- [ADR-008 Choose External Secrets Operator](./008-choose-external-secrets-operator.md)  
 - [External Secrets Operator Docs](https://external-secrets.io/)  
 - [1Password Service Account Integration](https://developer.1password.com/docs/cli/kubernetes/)  
 

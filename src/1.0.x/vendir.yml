@@ -1,0 +1,32 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+
+directories:
+  - path: flux/upstream
+    contents:
+      - path: manifests
+        extract: true
+        githubRelease:
+          slug: fluxcd/flux2
+          tag: v2.7.3
+          disableAutoChecksumValidation: true
+          assetNames:
+            - manifests.tar.gz
+          unpackArchive:
+            path: manifests.tar.gz
+#  - path: eso
+#    contents:
+#      - path: crds.yaml
+#        githubRelease:
+#          slug: external-secrets/external-secrets
+#          tag: v0.10.4
+#          disableAutoChecksumValidation: true
+#          assetNames:
+#            - external-secrets-crds.yaml
+#      - path: .
+#        helmChart:
+#          name: external-secrets
+#          version: "0.10.4"
+#          repository:
+#            url: https://charts.external-secrets.io
+#          helmVersion: "3"

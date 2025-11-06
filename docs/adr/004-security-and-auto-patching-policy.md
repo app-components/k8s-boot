@@ -74,8 +74,8 @@ Clusters must always consume the **moving minor-line file** (for example `bootst
 | ADR | Relationship |
 |------|---------------|
 | **003 – Versioning and Upgrade Policy** | Defines the semantic versioning framework this policy builds on. |
-| **004 – Drift Guard Auto-Patch** | Provides the Flux mechanism that applies and enforces patch updates. |
-| **006 – No Secrets in Git** | Ensures that patch artifacts and automation never include sensitive data. |
+| **007 – Drift Guard Strategy** | Provides the Flux mechanism that applies and enforces patch updates. |
+| **009 – No Secrets in Git** | Ensures that patch artifacts and automation never include sensitive data. |
 
 ## 7 – Decision Summary
 

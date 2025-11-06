@@ -12,14 +12,14 @@ Inspired by Spring Boot and Ruby on Rails, k8s-boot embraces convention over con
 
 ## The Architecture
 
-`k8s-boot` is **Layer 1** in a 4-layer model:
+`k8s-boot` is the **Bootstrap** layer in a 4-layer model:
 
-| Layer                        | Description                                                                          | Owner                       |
-| ---------------------------- | ------------------------------------------------------------------------------------ | --------------------------- |
-| **Layer 0 – Infrastructure** | Raw Kubernetes cluster                                                               | Your cloud/infra tooling    |
-| **Layer 1 – k8s-boot**       | FluxCD + ESO baseline                                                                | **k8s-boot (this repo)**    |
-| **Layer 2 – Platform Core**  | Ingress, cert-manager, observability, etc.                                           | Your platform repo          |
-| **Layer 3 – Applications**   | Actual workloads                                                                     | Your application repos      |
+| Layer                        | Description                                      | Owner                    |
+| ---------------------------- | ------------------------------------------------ | ------------------------ |
+| **Layer 0 – Infrastructure** | Raw Kubernetes cluster                           | Your cloud/infra tooling |
+| **Layer 1 – Bootstrap**      | FluxCD + ESO baseline                            | **k8s-boot (this repo)** |
+| **Layer 2 – Platform**       | Ingress, cert-manager, observability, etc.       | Your platform repo       |
+| **Layer 3 – Applications**   | Actual workloads                                 | Your application repos   |
 
 k8s-boot owns Layer 1 and nothing else. Everything above it is yours to define.
 
@@ -39,7 +39,7 @@ After about 60 seconds, you have a GitOps-native cluster with FluxCD managing de
 
 k8s-boot gives you the foundation. You build the platform on top of it.
 
-Your platform repo (Layer 2+) will typically include:
+Your platform repo (Layer 2) will typically include:
 - Ingress controllers
 - Certificate management (cert-manager)
 - Observability and monitoring

@@ -9,7 +9,9 @@ k8s-boot/
 ├── src/
 │   ├── 1.0/
 │   │   ├── flux/           # Flux component manifests
-│   │   ├── eso/            # External Secrets Operator manifests
+│   │   ├── eso/            # External Secrets Operator manifests (static)
+│   │   │   ├── crds.yaml   # ESO CRDs
+│   │   │   └── install.yaml # ESO deployment, service, etc.
 │   │   ├── kustomization.yaml
 │   │   ├── VERSION         # Current version (e.g., 1.0.5)
 │   │   └── build.sh        # Build script for this version line
@@ -54,6 +56,42 @@ Each version directory is self-contained with its own:
 - Kustomization file
 - VERSION file
 - build.sh script
+
+## Layer 1 Bootstrap Principles
+
+Layer 1 components (Flux and ESO) follow these architectural principles:
+
+1. **Installed via kubectl, not Flux controllers**
+   - All Layer 1 components are static manifests applied directly with `kubectl apply`
+   - This avoids race conditions during bootstrap (e.g., HelmRelease CRDs not existing yet)
+   - Ensures the bootstrap is self-contained and works immediately
+
+2. **Monitored by Flux for drift detection**
+   - After bootstrap, Flux reconciles against the k8s-boot GitRepository
+   - If someone manually modifies Flux or ESO resources, Flux detects and corrects the drift
+   - Flux doesn't "install" Layer 1 - it "guards" Layer 1
+
+3. **Upgraded by applying new bootstrap versions**
+   - To upgrade Flux or ESO, users apply a new bootstrap manifest (e.g., `bootstrap-1.0.6.yaml`)
+   - Users do NOT manage Layer 1 via HelmReleases or other Flux mechanisms
+   - Layer 2+ (platform components) can use Flux Helm/Kustomize controllers
+
+4. **Immutable and versioned together**
+   - Flux and ESO versions are pinned and tested together in each k8s-boot release
+   - Users get a known-good combination, not a moving target
+
+**Example flow:**
+```bash
+# 1. Bootstrap installs Flux + ESO directly
+kubectl apply -f bootstrap-1.0.0.yaml
+
+# 2. Flux starts and reconciles k8s-boot GitRepository
+# 3. Flux continuously monitors src/1.0/ for drift
+# 4. If drift occurs, Flux corrects it
+
+# 5. To upgrade, apply new bootstrap version
+kubectl apply -f bootstrap-1.0.6.yaml
+```
 
 ## Semantic Versioning
 
@@ -225,3 +263,6 @@ The changelog is automatically generated from these commits using `git-cliff`.
 - The `release/` directory mirrors `src/` structure with each version line in its own subdirectory
 - Each version line has its own CHANGELOG.md generated using git-cliff with path filtering
 - Git tags (`vx.y.z`) mark specific releases for immutable references
+- **Layer 1 components (Flux, ESO) are static manifests installed via kubectl, not Flux controllers**
+- Flux monitors Layer 1 for drift but does not manage the installation
+- Upgrades to Layer 1 are performed by applying new bootstrap manifest versions

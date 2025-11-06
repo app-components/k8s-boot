@@ -35,6 +35,8 @@ This single manifest installs FluxCD and External Secrets Operator, then creates
 
 After about 60 seconds, you have a GitOps-native cluster with FluxCD managing deployments and ESO ready to sync secrets. **That's all k8s-boot provides.**
 
+Flux then continuously monitors the k8s-boot baseline for drift. If someone manually modifies Flux or ESO components, Flux detects and corrects the drift - ensuring your foundation stays consistent with the tested release.
+
 ### What's Next
 
 k8s-boot gives you the foundation. You build the platform on top of it.

@@ -1,4 +1,4 @@
-# ADR-004: Security and Auto-Patching Policy
+# ADR-005: Security and Auto-Patching Policy
 
 **Date:** 2025-11-06
 **Status:** Accepted

@@ -1,4 +1,4 @@
-# ADR-003: Versioning and Upgrade Policy
+# ADR-004: Versioning and Upgrade Policy
 
 **Date:** 2025-11-06
 **Status:** Accepted

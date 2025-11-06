@@ -1,4 +1,4 @@
-# ADR-013: User Interface and Interaction Philosophy
+# ADR-003: User Interface and Interaction Philosophy
 
 **Date:** 2025-11-06
 **Status:** Accepted

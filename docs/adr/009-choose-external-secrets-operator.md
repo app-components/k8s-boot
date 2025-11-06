@@ -1,4 +1,4 @@
-# ADR-008: Choose External Secrets Operator (ESO) for Secret Management
+# ADR-009: Choose External Secrets Operator (ESO) for Secret Management
 
 **Date:** 2025-11-06
 **Status:** Accepted

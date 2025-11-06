@@ -1,4 +1,4 @@
-# ADR-007: Drift Guard Strategy for Layer 1 (Flux + ESO)
+# ADR-008: Drift Guard Strategy for Layer 1 (Flux + ESO)
 
 **Date:** 2025-11-06
 **Status:** Accepted

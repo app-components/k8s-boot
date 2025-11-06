@@ -1,4 +1,4 @@
-# ADR-005: Choose FluxCD as the GitOps Engine
+# ADR-006: Choose FluxCD as the GitOps Engine
 
 **Date:** 2025-11-06
 **Status:** Accepted

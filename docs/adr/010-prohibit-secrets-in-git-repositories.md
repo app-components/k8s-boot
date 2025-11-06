@@ -1,4 +1,4 @@
-# ADR-009: Prohibit Secrets in Git Repositories
+# ADR-010: Prohibit Secrets in Git Repositories
 
 **Date:** 2025-11-06
 **Status:** Accepted

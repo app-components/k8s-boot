@@ -29,16 +29,16 @@ k8s-boot/
 
 **Layer 1 Bootstrap** (ADR-001, ADR-002):
 - Only FluxCD (Source + Kustomize + Notification) + ESO
-- Helm Controller explicitly disabled (ADR-006)
+- Helm Controller explicitly disabled (ADR-007)
 - Static manifests applied via kubectl, not Flux controllers
 - Flux monitors for drift but doesn't install Layer 1
 
-**Namespaces** (ADR-011):
+**Namespaces** (ADR-012):
 - Use upstream defaults: `flux-system`, `external-secrets`
 - No custom prefixes or rebranding
 - Clusters are cattle, not pets
 
-**Security** (ADR-004):
+**Security** (ADR-005):
 - All patches are mandatory security updates
 - Use tracking files (`bootstrap-1.0.x.yaml`) for auto-patching
 - Pinned versions discouraged in production
@@ -61,7 +61,7 @@ k8s-boot uses Carvel vendir for reproducible dependency management:
 | Minor (x.Y.z) | Flux or ESO minor | 1.0 → 1.1 |
 | Major (X.y.z) | Flux or ESO major | 1.x → 2.0 |
 
-## kubectl Apply Standard (ADR-010)
+## kubectl Apply Standard (ADR-011)
 
 **All `kubectl apply` operations MUST use:**
 ```bash
@@ -132,9 +132,9 @@ kubectl apply --server-side --force-conflicts --field-manager=k8s-boot \
 
 ## Key Implementation Notes
 
-- Flux Helm Controller is disabled (ADR-006) - ESO templated from Helm at build time
-- All components use upstream default namespaces: `flux-system`, `external-secrets` (ADR-011)
-- Tracking files (`bootstrap-1.0.x.yaml`) are the recommended consumption method (ADR-004)
-- Drift guard uses branch-based tracking, not tags - enables auto-patching within minor line (ADR-007)
+- Flux Helm Controller is disabled (ADR-007) - ESO templated from Helm at build time
+- All components use upstream default namespaces: `flux-system`, `external-secrets` (ADR-012)
+- Tracking files (`bootstrap-1.0.x.yaml`) are the recommended consumption method (ADR-005)
+- Drift guard uses branch-based tracking, not tags - enables auto-patching within minor line (ADR-008)
 - `vendir.lock.yml` files must be committed for reproducible builds
 - All releases on single `main` branch with git tags (`vx.y.z`) for immutable references

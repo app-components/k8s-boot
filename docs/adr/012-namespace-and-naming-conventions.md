@@ -1,4 +1,4 @@
-# ADR-011: Namespace and Naming Conventions
+# ADR-012: Namespace and Naming Conventions
 
 **Date:** 2025-11-06
 **Status:** Accepted

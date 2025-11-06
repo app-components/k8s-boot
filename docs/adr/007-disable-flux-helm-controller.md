@@ -1,4 +1,4 @@
-# ADR-006: Disable FluxCD Helm Controller
+# ADR-007: Disable FluxCD Helm Controller
 
 **Date:** 2025-11-06
 **Status:** Accepted

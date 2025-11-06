@@ -1,9 +1,8 @@
 # ADR-005: Choose FluxCD as the GitOps Engine
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
-**Context:** k8s-boot / Layer 1 Design  
+**Date:** 2025-11-06
+**Status:** Accepted
+**Context:** k8s-boot / Layer 1 design  
 
 ## Context
 

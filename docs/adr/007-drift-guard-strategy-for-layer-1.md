@@ -1,9 +1,8 @@
 # ADR-007: Drift Guard Strategy for Layer 1 (Flux + ESO)
 
-**Status:** Accepted  
-**Date:** 2025-11-06  
-**Deciders:** Adib Saikali  
-**Context:** k8s-boot v1.x  
+**Date:** 2025-11-06
+**Status:** Accepted
+**Context:** k8s-boot / Layer 1 design  
 
 ## Context
 

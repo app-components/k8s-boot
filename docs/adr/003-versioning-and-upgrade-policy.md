@@ -1,8 +1,7 @@
 # ADR-003: Versioning and Upgrade Policy
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
+**Date:** 2025-11-06
+**Status:** Accepted
 **Context:** k8s-boot / k8s-core projects  
 
 ## Context and Problem Statement

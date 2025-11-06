@@ -1,8 +1,7 @@
 # ADR-001: Establish Layered Kubernetes Bootstrapping Model (k8s-boot)
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
+**Date:** 2025-11-06
+**Status:** Accepted
 **Context:** k8s-boot / platform architecture  
 
 ## Context and Problem Statement

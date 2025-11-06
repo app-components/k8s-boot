@@ -1,9 +1,8 @@
 # ADR-009: Prohibit Secrets in Git Repositories
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
-**Context:** All Layers (k8s-boot → k8s-core → applications)  
+**Date:** 2025-11-06
+**Status:** Accepted
+**Context:** All layers (k8s-boot → k8s-core → applications)  
 
 ## Context
 

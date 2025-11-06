@@ -1,8 +1,7 @@
 # ADR-011: Define Layer 2 (Core Platform) as a Pre-Rendered Bill of Materials (BOM)
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
+**Date:** 2025-11-06
+**Status:** Accepted
 **Context:** k8s-core / platform architecture  
 
 ## Context and Problem Statement

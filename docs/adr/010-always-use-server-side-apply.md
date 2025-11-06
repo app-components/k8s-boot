@@ -1,8 +1,7 @@
 # ADR-010: Use Server-Side Apply (SSA) for All Bootstrap and Upgrade Operations
 
-**Date:** 2025-11-06  
-**Status:** Accepted  
-**Deciders:** Platform Engineering  
+**Date:** 2025-11-06
+**Status:** Accepted
 **Context:** k8s-boot / k8s-core release pipeline  
 
 ## Context
